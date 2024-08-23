@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=3 uid="uid://30qww1oxvm37"]
+
+[ext_resource type="Script" path="res://scripts/main_menu_page.gd" id="1_jh8kh"]
+
+[node name="MainMenuPage" type="Control" node_paths=PackedStringArray("ip_input", "port_input", "connect_button", "host_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jh8kh")
+ip_input = NodePath("Panel/IpAddressInput")
+port_input = NodePath("Panel/PortInput")
+connect_button = NodePath("Panel/ConnectButton")
+host_button = NodePath("Panel/HostButton")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 176.0
+offset_right = 721.0
+offset_bottom = 470.0
+
+[node name="IpLabel" type="Label" parent="Panel"]
+layout_mode = 2
+anchor_top = 0.257
+anchor_bottom = 0.257
+offset_left = 16.0
+offset_top = -11.558
+offset_right = 98.0
+offset_bottom = 11.442
+text = "IP Address"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="IpAddressInput" type="LineEdit" parent="Panel"]
+layout_mode = 2
+anchor_left = 0.36
+anchor_top = 0.259
+anchor_right = 0.997
+anchor_bottom = 0.259
+offset_left = -0.0400009
+offset_top = -20.146
+offset_right = -16.133
+offset_bottom = 19.854
+placeholder_text = "192.168.0.42"
+caret_blink = true
+
+[node name="PortLabel" type="Label" parent="Panel"]
+layout_mode = 2
+anchor_top = 0.447
+anchor_bottom = 0.447
+offset_left = 16.0
+offset_top = -11.418
+offset_right = 98.0
+offset_bottom = 11.582
+text = "Port"
+vertical_alignment = 1
+
+[node name="PortInput" type="SpinBox" parent="Panel"]
+layout_mode = 2
+anchor_left = 0.36
+anchor_top = 0.447
+anchor_right = 1.0
+anchor_bottom = 0.447
+offset_left = -0.0400009
+offset_top = -19.418
+offset_right = -17.0
+offset_bottom = 19.582
+max_value = 9999.0
+rounded = true
+
+[node name="ConnectButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.776
+anchor_bottom = 0.776
+offset_left = 32.0
+offset_top = -20.144
+offset_right = 128.0
+offset_bottom = 19.856
+grow_vertical = 0
+text = "Connect"
+
+[node name="HostButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.997
+anchor_top = 0.776
+anchor_right = 0.997
+anchor_bottom = 0.776
+offset_left = -128.133
+offset_top = -20.144
+offset_right = -32.133
+offset_bottom = 19.856
+text = "Host"

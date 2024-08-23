@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://fg6461js1oba"]
+
+[ext_resource type="Script" path="res://scripts/live_numbers.gd" id="1_ujdn3"]
+
+[node name="LiveNumbersPage" type="Control" node_paths=PackedStringArray("button1", "button2", "valDisplay")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ujdn3")
+button1 = NodePath("Panel/ValueButton1")
+button2 = NodePath("Panel/ValueButton2")
+valDisplay = NodePath("Panel/TextPanel/Label")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.198
+anchor_right = 0.5
+anchor_bottom = 0.198
+offset_left = -160.0
+offset_top = -0.304016
+offset_right = 160.0
+offset_bottom = 308.696
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextPanel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.181
+anchor_right = 1.0
+anchor_bottom = 0.337
+offset_left = 24.0
+offset_top = 0.0709953
+offset_right = -16.0
+offset_bottom = -0.133003
+
+[node name="Label" type="Label" parent="Panel/TextPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+text = "Value display"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueButton1" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.793
+anchor_bottom = 0.793
+offset_left = 40.0
+offset_top = -24.037
+offset_right = 152.0
+offset_bottom = 23.963
+grow_horizontal = 0
+text = "Value 1"
+
+[node name="ValueButton2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.793
+anchor_right = 1.0
+anchor_bottom = 0.793
+offset_left = -152.0
+offset_top = -24.037
+offset_right = -40.0
+offset_bottom = 23.963
+grow_horizontal = 0
+grow_vertical = 2
+text = "Value 2"
