@@ -8,16 +8,16 @@
 
 [node name="MainScene" type="Node2D" node_paths=PackedStringArray("pages")]
 script = ExtResource("1_ftytv")
-pages = [NodePath("App Pages/LiveNumbersPage"), NodePath("App Pages/ServerPage"), NodePath("App Pages/MainMenuPage")]
+pages = [NodePath("AppPages/LiveNumbersPage"), NodePath("AppPages/ServerPage"), NodePath("AppPages/MainMenuPage")]
 
-[node name="App Pages" type="CanvasLayer" parent="."]
+[node name="AppPages" type="CanvasLayer" parent="."]
 
-[node name="MainMenuPage" parent="App Pages" instance=ExtResource("2_tmqc7")]
+[node name="MainMenuPage" parent="AppPages" instance=ExtResource("2_tmqc7")]
 
-[node name="LiveNumbersPage" parent="App Pages" instance=ExtResource("1_vkuqi")]
+[node name="LiveNumbersPage" parent="AppPages" instance=ExtResource("1_vkuqi")]
 visible = false
 
-[node name="ServerPage" parent="App Pages" instance=ExtResource("2_p3sf1")]
+[node name="ServerPage" parent="AppPages" instance=ExtResource("2_p3sf1")]
 visible = false
 
 [node name="Multiplayer" parent="." instance=ExtResource("2_nawyr")]
