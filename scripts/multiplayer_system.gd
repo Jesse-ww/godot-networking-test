@@ -1,7 +1,10 @@
 class_name MultiplayerSystem
 extends Node2D
 
+signal on_host
+signal on_join
 var peer : ENetMultiplayerPeer
+
 
 func _ready() -> void:
 	multiplayer.connected_to_server.connect(server_connected)
@@ -37,9 +40,11 @@ func host_session() -> void:
 		print("An error occurred when hosting..")
 	else:
 		multiplayer.set_multiplayer_peer(peer)
+		on_host.emit()
 		print("Waiting on players..")
 
 func join_session() -> void:
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(ServerProps.ip_address, ServerProps.port)
 	multiplayer.set_multiplayer_peer(peer)
+	on_join.emit()

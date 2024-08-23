@@ -7,3 +7,69 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.167
+anchor_top = 0.111
+anchor_right = 0.833
+anchor_bottom = 0.889
+offset_left = -0.384018
+offset_top = 0.071991
+offset_right = 0.383911
+offset_bottom = -0.0720215
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Server Dashboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.111
+anchor_right = 0.958
+anchor_bottom = 0.841
+offset_left = -0.256004
+offset_top = 0.0559959
+offset_right = 0.255981
+offset_bottom = 0.135986
+grow_horizontal = 2
+text = "some result"
+editable = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+indent_wrapped_lines = true
+scroll_smooth = true
+scroll_past_end_of_file = true
+scroll_fit_content_height = true
+
+[node name="LineEdit" type="LineEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.889
+anchor_right = 0.958
+anchor_bottom = 0.95
+offset_left = -0.256004
+offset_top = -0.0560303
+offset_right = 0.255981
+offset_bottom = 0.199982
+grow_horizontal = 2
+grow_vertical = 0
+placeholder_text = "Type commands here"

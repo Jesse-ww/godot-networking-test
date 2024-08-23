@@ -12,12 +12,12 @@ pages = [NodePath("App Pages/LiveNumbersPage"), NodePath("App Pages/ServerPage")
 
 [node name="App Pages" type="CanvasLayer" parent="."]
 
+[node name="MainMenuPage" parent="App Pages" instance=ExtResource("2_tmqc7")]
+
 [node name="LiveNumbersPage" parent="App Pages" instance=ExtResource("1_vkuqi")]
 visible = false
 
 [node name="ServerPage" parent="App Pages" instance=ExtResource("2_p3sf1")]
 visible = false
-
-[node name="MainMenuPage" parent="App Pages" instance=ExtResource("2_tmqc7")]
 
 [node name="Multiplayer" parent="." instance=ExtResource("2_nawyr")]

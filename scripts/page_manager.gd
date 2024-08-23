@@ -1,3 +1,4 @@
+class_name PageManager
 extends Node2D
 
 @export var pages : Array[Control]
