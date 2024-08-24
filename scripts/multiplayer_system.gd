@@ -9,18 +9,16 @@ var peer : ENetMultiplayerPeer
 var server_page : ServerPage
 var client_page : LiveNumbersPage
 
-
 func _ready() -> void:
 	server_page = page_manager.get_page("ServerPage")
 	server_page.disconnect_pressed.connect(disconnect_session)
+	client_page = page_manager.get_page("LiveNumbersPage")
+	client_page.disconnect_pressed.connect(disconnect_session)
 	multiplayer.connected_to_server.connect(server_connected)
 	multiplayer.server_disconnected.connect(server_disconnected)
 	multiplayer.connection_failed.connect(connection_failed)
 	multiplayer.peer_connected.connect(peer_connected)
 	multiplayer.peer_disconnected.connect(peer_disconnected)
-
-func _process(delta: float) -> void:
-	pass
 
 func server_connected():
 	server_page.log_to_server("Connected!")

@@ -10,7 +10,9 @@ var page_manager : PageManager
 
 func _ready() -> void:
 	ip_input.text = "localhost"
+	ServerProps.ip_address = "localhost"
 	port_input.value = 42
+	ServerProps.port = 42
 	ip_input.text_changed.connect(receive_ip)
 	port_input.value_changed.connect(receive_port)
 	mp_system = get_node("/root/MainScene/Multiplayer")
@@ -19,9 +21,6 @@ func _ready() -> void:
 	page_manager = get_node("/root/MainScene")
 	mp_system.on_host.connect(open_server_page)
 	mp_system.on_join.connect(open_client_page)
-
-func _process(delta: float) -> void:
-	pass
 
 func receive_ip(ip:String):
 	ServerProps.ip_address = ip

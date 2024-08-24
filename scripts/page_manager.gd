@@ -6,10 +6,6 @@ extends Node2D
 func _ready() -> void:
 	pass
 
-
-func _process(delta: float) -> void:
-	pass
-
 ## Opens a single page and hides all others
 func open_page(name:String) -> void:
 	for p in pages:

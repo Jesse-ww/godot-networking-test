@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/live_numbers_page.gd" id="1_ujdn3"]
 
-[node name="LiveNumbersPage" type="Control" node_paths=PackedStringArray("button1", "button2", "valDisplay")]
+[node name="LiveNumbersPage" type="Control" node_paths=PackedStringArray("button1", "button2", "valDisplay", "disconnect_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,31 +13,33 @@ script = ExtResource("1_ujdn3")
 button1 = NodePath("Panel/ValueButton1")
 button2 = NodePath("Panel/ValueButton2")
 valDisplay = NodePath("Panel/TextPanel/Label")
+disconnect_button = NodePath("Panel/DisconnectButton")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.198
+anchor_top = 0.272
 anchor_right = 0.5
-anchor_bottom = 0.198
+anchor_bottom = 0.272
 offset_left = -160.0
-offset_top = -0.304016
+offset_top = -0.256012
 offset_right = 160.0
-offset_bottom = 308.696
+offset_bottom = 308.744
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextPanel" type="Panel" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.181
+anchor_top = 0.285
 anchor_right = 1.0
-anchor_bottom = 0.337
-offset_left = 24.0
-offset_top = 0.0709953
-offset_right = -16.0
-offset_bottom = -0.133003
+anchor_bottom = 0.285
+offset_left = 40.0
+offset_top = -24.065
+offset_right = -40.0
+offset_bottom = 23.935
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Panel/TextPanel"]
 layout_mode = 1
@@ -45,9 +47,9 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
-offset_top = 8.0
+offset_top = 8.00002
 offset_right = -8.0
-offset_bottom = -8.0
+offset_bottom = -7.99998
 text = "Value display"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -55,12 +57,12 @@ vertical_alignment = 1
 [node name="ValueButton1" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.793
-anchor_bottom = 0.793
+anchor_top = 0.544
+anchor_bottom = 0.544
 offset_left = 40.0
-offset_top = -24.037
+offset_top = -24.096
 offset_right = 152.0
-offset_bottom = 23.963
+offset_bottom = 23.904
 grow_horizontal = 0
 text = "Value 1"
 
@@ -68,13 +70,26 @@ text = "Value 1"
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
-anchor_top = 0.793
+anchor_top = 0.544
 anchor_right = 1.0
-anchor_bottom = 0.793
+anchor_bottom = 0.544
 offset_left = -152.0
-offset_top = -24.037
+offset_top = -24.096
 offset_right = -40.0
-offset_bottom = 23.963
+offset_bottom = 23.904
 grow_horizontal = 0
 grow_vertical = 2
 text = "Value 2"
+
+[node name="DisconnectButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.803
+anchor_right = 0.65
+anchor_bottom = 0.903
+offset_top = -0.127014
+offset_right = -1.52588e-05
+offset_bottom = -0.0270386
+grow_horizontal = 0
+text = "Disconnect"
