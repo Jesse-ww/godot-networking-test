@@ -6,11 +6,13 @@ signal on_join
 
 @onready var page_manager : PageManager = get_node("/root/MainScene")
 var peer : ENetMultiplayerPeer
-var server_page: ServerPage
+var server_page : ServerPage
+var client_page : LiveNumbersPage
 
 
 func _ready() -> void:
 	server_page = page_manager.get_page("ServerPage")
+	server_page.disconnect_pressed.connect(disconnect_session)
 	multiplayer.connected_to_server.connect(server_connected)
 	multiplayer.server_disconnected.connect(server_disconnected)
 	multiplayer.connection_failed.connect(connection_failed)
@@ -50,3 +52,8 @@ func join_session() -> void:
 	peer.create_client(ServerProps.ip_address, ServerProps.port)
 	multiplayer.set_multiplayer_peer(peer)
 	on_join.emit()
+
+func disconnect_session() -> void:
+	if peer.get_connection_status() == peer.ConnectionStatus.CONNECTION_CONNECTED:
+		peer.close()
+		page_manager.open_page("MainMenuPage")

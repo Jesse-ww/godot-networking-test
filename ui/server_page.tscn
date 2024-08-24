@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/server_page.gd" id="1_2qtgs"]
 
-[node name="ServerPage" type="Control" node_paths=PackedStringArray("server_log", "command_input")]
+[node name="ServerPage" type="Control" node_paths=PackedStringArray("server_log", "command_input", "disconnect_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_2qtgs")
 server_log = NodePath("Panel/ServerLog")
 command_input = NodePath("Panel/CommandInput")
+disconnect_button = NodePath("Panel/DisconnectButton")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -65,12 +66,26 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.042
 anchor_top = 0.889
-anchor_right = 0.958
+anchor_right = 0.792
 anchor_bottom = 0.95
 offset_left = -0.256004
-offset_top = -0.0560303
-offset_right = 0.255981
+offset_top = -0.0560608
+offset_right = -0.255981
 offset_bottom = 0.199982
 grow_horizontal = 2
 grow_vertical = 0
 placeholder_text = "Type commands here"
+
+[node name="DisconnectButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.813
+anchor_top = 0.889
+anchor_right = 0.958
+anchor_bottom = 0.952
+offset_left = -0.383972
+offset_top = -0.0560303
+offset_right = 0.255981
+offset_bottom = 0.191986
+grow_horizontal = 0
+text = "Disconnect"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fg6461js1oba"]
 
-[ext_resource type="Script" path="res://scripts/live_numbers.gd" id="1_ujdn3"]
+[ext_resource type="Script" path="res://scripts/live_numbers_page.gd" id="1_ujdn3"]
 
 [node name="LiveNumbersPage" type="Control" node_paths=PackedStringArray("button1", "button2", "valDisplay")]
 layout_mode = 3

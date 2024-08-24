@@ -1,3 +1,4 @@
+class_name LiveNumbersPage
 extends Control
 
 @export var button1 : Button

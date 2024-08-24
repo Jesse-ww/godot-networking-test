@@ -1,15 +1,15 @@
 class_name ServerPage
 extends Control
 
+signal disconnect_pressed
+
 @export var server_log : TextEdit
 @export var command_input : LineEdit
+@export var disconnect_button : Button
 
 func _ready() -> void:
 	command_input.text_submitted.connect(enter_command)
-	pass
-
-func _process(delta: float) -> void:
-	pass
+	disconnect_button.pressed.connect(disconnect_server)
 
 func log_to_server(message:String) -> void:
 	server_log.text += message + "\n"
@@ -19,3 +19,6 @@ func log_to_server(message:String) -> void:
 func enter_command(command:String) -> void:
 	log_to_server("Executing " + command + " command")
 	command_input.clear()
+
+func disconnect_server() -> void:
+	disconnect_pressed.emit()
