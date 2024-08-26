@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://fg6461js1oba"]
+[gd_scene load_steps=2 format=3 uid="uid://fg6461js1oba"]
 
 [ext_resource type="Script" path="res://scripts/live_numbers_page.gd" id="1_ujdn3"]
-[ext_resource type="PackedScene" uid="uid://chcj7up8k8pa8" path="res://addons/easy_charts/examples/line_chart/Control.tscn" id="2_ksxnm"]
 
 [node name="LiveNumbersPage" type="Control" node_paths=PackedStringArray("button1", "button2", "val_display", "disconnect_button")]
 layout_mode = 3
@@ -80,14 +79,3 @@ offset_top = 24.0
 offset_right = 744.0
 offset_bottom = 400.0
 placeholder_text = "Output"
-
-[node name="Chart" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 24.0
-offset_top = 176.0
-offset_right = 400.0
-offset_bottom = 488.0
-
-[node name="Control2" parent="Chart" instance=ExtResource("2_ksxnm")]
-layout_mode = 1
