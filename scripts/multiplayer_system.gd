@@ -31,9 +31,17 @@ func connection_failed():
 
 func peer_connected(id:int):
 	server_page.log_to_server("Peer " + str(id) + " connected!")
+	if !ServerProps.connected_clients.any(func(client:ClientPrefs): return client.id == id):
+		var client : ClientPrefs = ClientPrefs.new()
+		client.id = id
+		client.datastream = ClientPrefs.StreamType.DATASET_1
+		ServerProps.connected_clients.append(client)
 
 func peer_disconnected(id:int):
 	server_page.log_to_server("Peer " + str(id) + " disconnected..")
+	if ServerProps.connected_clients.any(func(client:ClientPrefs): return client.id == id):
+		for c in ServerProps.connected_clients:
+			ServerProps.connected_clients.erase(c)
 
 func host_session() -> void:
 	peer = ENetMultiplayerPeer.new()

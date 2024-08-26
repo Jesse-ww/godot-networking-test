@@ -23,3 +23,7 @@ ServerProps="*res://scripts/server_props.gd"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/easy_charts/plugin.cfg")

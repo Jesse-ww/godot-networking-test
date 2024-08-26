@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfpnspshbwhyu"]
+[gd_scene load_steps=3 format=3 uid="uid://dfpnspshbwhyu"]
 
 [ext_resource type="Script" path="res://scripts/multiplayer_system.gd" id="1_a5opi"]
+[ext_resource type="Script" path="res://scripts/net_messages.gd" id="2_anplj"]
 
 [node name="Multiplayer" type="Node2D"]
 script = ExtResource("1_a5opi")
+
+[node name="NetMessages" type="Node" parent="."]
+script = ExtResource("2_anplj")

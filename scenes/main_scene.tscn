@@ -1,16 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://pi17cpxkpbjh"]
+[gd_scene load_steps=11 format=3 uid="uid://pi17cpxkpbjh"]
 
 [ext_resource type="Script" path="res://scripts/page_manager.gd" id="1_ftytv"]
 [ext_resource type="PackedScene" uid="uid://fg6461js1oba" path="res://ui/live_numbers_page.tscn" id="1_vkuqi"]
 [ext_resource type="PackedScene" uid="uid://dfpnspshbwhyu" path="res://scenes/multiplayer.tscn" id="2_nawyr"]
 [ext_resource type="PackedScene" uid="uid://depbxh8muhoyo" path="res://ui/server_page.tscn" id="2_p3sf1"]
 [ext_resource type="PackedScene" uid="uid://30qww1oxvm37" path="res://ui/main_menu_page.tscn" id="2_tmqc7"]
+[ext_resource type="PackedScene" uid="uid://dsqie22myfdyr" path="res://scenes/data_store.tscn" id="6_m6k32"]
+
+[sub_resource type="Gradient" id="Gradient_pyoht"]
+colors = PackedColorArray(0.787845, 0.920487, 0.913698, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fk627"]
+gradient = SubResource("Gradient_pyoht")
+fill_from = Vector2(0.130342, 1)
+fill_to = Vector2(0.512821, 0.0576923)
+
+[sub_resource type="Gradient" id="Gradient_v0ntd"]
+colors = PackedColorArray(0.214754, 0.527184, 0.500402, 1, 0.276467, 0.642304, 0.635051, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_asxn2"]
+gradient = SubResource("Gradient_v0ntd")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
 
 [node name="MainScene" type="Node2D" node_paths=PackedStringArray("pages")]
 script = ExtResource("1_ftytv")
 pages = [NodePath("AppPages/LiveNumbersPage"), NodePath("AppPages/ServerPage"), NodePath("AppPages/MainMenuPage")]
 
 [node name="AppPages" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="AppPages"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_fk627")
 
 [node name="MainMenuPage" parent="AppPages" instance=ExtResource("2_tmqc7")]
 
@@ -20,4 +45,32 @@ visible = false
 [node name="ServerPage" parent="AppPages" instance=ExtResource("2_p3sf1")]
 visible = false
 
+[node name="Banner" type="TextureRect" parent="AppPages"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.062
+offset_bottom = 23.824
+grow_horizontal = 2
+texture = SubResource("GradientTexture2D_asxn2")
+
+[node name="Label" type="Label" parent="AppPages/Banner"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 8.0
+offset_right = 96.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.364706)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 21
+text = "Conrad Live?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Multiplayer" parent="." instance=ExtResource("2_nawyr")]
+
+[node name="DataStore" parent="." instance=ExtResource("6_m6k32")]

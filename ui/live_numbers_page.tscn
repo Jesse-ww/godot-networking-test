@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://fg6461js1oba"]
+[gd_scene load_steps=3 format=3 uid="uid://fg6461js1oba"]
 
 [ext_resource type="Script" path="res://scripts/live_numbers_page.gd" id="1_ujdn3"]
+[ext_resource type="PackedScene" uid="uid://chcj7up8k8pa8" path="res://addons/easy_charts/examples/line_chart/Control.tscn" id="2_ksxnm"]
 
-[node name="LiveNumbersPage" type="Control" node_paths=PackedStringArray("button1", "button2", "valDisplay", "disconnect_button")]
+[node name="LiveNumbersPage" type="Control" node_paths=PackedStringArray("button1", "button2", "val_display", "disconnect_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_ujdn3")
 button1 = NodePath("Panel/ValueButton1")
 button2 = NodePath("Panel/ValueButton2")
-valDisplay = NodePath("Panel/TextPanel/Label")
+val_display = NodePath("Panel/ValueDisplay")
 disconnect_button = NodePath("Panel/DisconnectButton")
 
 [node name="Panel" type="Panel" parent="."]
@@ -22,61 +23,38 @@ anchor_left = 0.5
 anchor_top = 0.272
 anchor_right = 0.5
 anchor_bottom = 0.272
-offset_left = -160.0
-offset_top = -0.256012
-offset_right = 160.0
-offset_bottom = 308.744
+offset_left = -384.0
+offset_top = -80.256
+offset_right = 384.0
+offset_bottom = 431.744
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextPanel" type="Panel" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.285
-anchor_right = 1.0
-anchor_bottom = 0.285
-offset_left = 40.0
-offset_top = -24.065
-offset_right = -40.0
-offset_bottom = 23.935
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Panel/TextPanel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 8.00002
-offset_right = -8.0
-offset_bottom = -7.99998
-text = "Value display"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ValueButton1" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.544
-anchor_bottom = 0.544
-offset_left = 40.0
-offset_top = -24.096
-offset_right = 152.0
-offset_bottom = 23.904
+anchor_left = 0.073
+anchor_top = 0.828
+anchor_right = 0.302
+anchor_bottom = 0.922
+offset_left = -0.064003
+offset_top = 0.0639648
+offset_right = 0.0639954
+offset_bottom = -0.0640259
 grow_horizontal = 0
 text = "Value 1"
 
 [node name="ValueButton2" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.544
-anchor_right = 1.0
-anchor_bottom = 0.544
-offset_left = -152.0
-offset_top = -24.096
-offset_right = -40.0
-offset_bottom = 23.904
+anchor_left = 0.354
+anchor_top = 0.828
+anchor_right = 0.583
+anchor_bottom = 0.922
+offset_left = 0.127991
+offset_top = 0.0639648
+offset_right = 0.255981
+offset_bottom = -0.0640259
 grow_horizontal = 0
 grow_vertical = 2
 text = "Value 2"
@@ -84,12 +62,32 @@ text = "Value 2"
 [node name="DisconnectButton" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.35
-anchor_top = 0.803
-anchor_right = 0.65
-anchor_bottom = 0.903
-offset_top = -0.127014
-offset_right = -1.52588e-05
-offset_bottom = -0.0270386
+anchor_left = 0.75
+anchor_top = 0.828
+anchor_right = 0.927
+anchor_bottom = 0.922
+offset_left = -6.10352e-05
+offset_top = 0.0639648
+offset_right = 0.0639648
+offset_bottom = -0.0640259
 grow_horizontal = 0
 text = "Disconnect"
+
+[node name="ValueDisplay" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 744.0
+offset_bottom = 400.0
+placeholder_text = "Output"
+
+[node name="Chart" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 176.0
+offset_right = 400.0
+offset_bottom = 488.0
+
+[node name="Control2" parent="Chart" instance=ExtResource("2_ksxnm")]
+layout_mode = 1
